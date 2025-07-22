@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist"></script>
+    <style>
+      #backgroundAll
+      {
+        position: fixed;
+        width: 330vw;
+        z-index: -10;filter: brightness(20%);
+        height: 180vw;
+
+      }
+      body
+      {
+        margin: 0;
+        padding: 0;
+      }
+       #Header {
+  position: relative;
+  width: 99vw;
+  height: 50vw;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden; 
+  margin: 0;
+}
+
+#Header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:var(--before-background-image);
+  background-size: cover;
+  background-position: center;
+  filter: brightness(25%);
+  z-index: -2;
+}
+
+#arrow1,
+#arrow2 {
+  position: relative;
+  z-index: 1; 
+  font-size: 3vw;
+  color: white;
+}
+
+#arrow1 {
+  margin-left: 2vw;
+ 
+}
+
+#arrow2 {
+  margin-right: 2vw;
+  
+}
+
+
+#arrow1::after {
+  content: "";
+  position: absolute;
+  background-color: rgb(52, 47, 86);
+  width: 3.5vw;
+  height: 3.5vw;
+  border-radius: 50%;
+  left: -40%;
+  z-index: -1;
+}
+#arrow2::after {
+  content: "";
+  position: absolute;
+  background-color: rgb(52, 47, 86);
+  width: 3.5vw;
+  height: 3.5vw;
+  border-radius: 50%;
+  left: -50%;
+  z-index: -1;
+}
+#arrow1::before
+{
+    content: "";
+  position: absolute;
+  background-image: linear-gradient(45deg, rgb(255, 0, 238),rgb(245, 147, 72),rgb(18, 186, 158),rgb(67, 104, 163),violet);
+  width: 4vw;
+  height: 4vw;
+  border-radius: 50%;
+  left: -50%;
+  top: -6%;
+  z-index: -1;
+  opacity: 0;
+
+}
+#arrow2::before
+{
+    content: "";
+  position: absolute;
+  background-image: linear-gradient(45deg, rgb(255, 0, 238),rgb(245, 147, 72),rgb(18, 186, 158),rgb(67, 104, 163),violet);
+  width: 4vw;
+  height: 4vw;
+  border-radius: 50%;
+  left: -65%;
+  top: -7%;
+  z-index: -1;
+  opacity: 0;
+
+}
+#arrow1:hover::before,#arrow2:hover::before
+{
+    
+    
+    animation: ease-in1 0.5s;
+    animation-fill-mode: forwards;
+}
+#arrow1:not(hover)::before,#arrow2:not(hover)::before
+{
+    
+    
+    animation: ease-out1 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.Head_Info
+{
+    opacity: 0;
+  position: absolute;
+  font-family: 'Orbitron',sans-serif;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(40deg,rgb(255, 169, 169),rgb(255, 255, 255),rgb(157, 213, 250),rgb(255, 255, 255),rgb(254, 163, 163));
+  top: 0;
+  font-size: 4vw;
+  text-align: center;
+  width: 98%;
+
+}
+#Heading1
+{
+   font-size: 6vw;
+
+
+}
+#Heading2
+{
+  top: 1.3vw;
+   font-size: 5vw;
+   
+
+}
+#Heading3
+{
+  top: 1.3vw;
+   font-size: 5vw;
+   
+
+}
+#Heading4
+{
+  
+   font-size: 6vw;
+  
+}
+@keyframes Fade_in {
+  0%{top: 2vw;opacity: 0;}
+  100%{top: 1.3vw;opacity: 1;}
+}
+@keyframes Fade_out {
+   100%{top: 2vw;opacity: 0;}
+  0%{top: 1.3vw;opacity: 1;}
+}
+#Heading1_info,#Heading2_info,#Heading3_Info
+{
+  position: relative;
+ 
+}
+
+.Subtext, .Sub_Sub_text
+{
+   top: 0;
+position: absolute;
+font-family: "Rajdhani",sans-serif;
+}
+.Subtext
+{
+  font-style: normal;
+  font-size: 2.5vw;
+ 
+  color: aliceblue  ;
+}
+#Heading1_info1
+{
+  top: 18vw;
+  left: 7.5vw;
+}
+#Heading1_info1 em
+{
+  color: white;
+  top: 5vw;
+  left: 5vw;
+  font-size: 1vw;
+  width: 20vw;
+}
+#Heading1_info2
+{
+  top: 18vw;
+  left: 42vw;
+  width: 20vw;
+  font-size: 2vw;
+}
+#Heading1_info2 em
+{
+  color: white;
+  top: 6vw;
+  left: 1vw;
+  font-size: 1vw;
+  width: 20vw;
+}
+#Heading1_info3
+{
+  top: 17.5vw;
+  right: 8vw;
+  width: 20vw;
+  font-size: 2vw;
+}
+#Heading1_info3 em
+{
+  color: white;
+  top: 6vw;
+  left: 1vw;
+  font-size: 1vw;
+  width: 20vw;
+}
+
+#Heading2_info1
+{
+  top: 18vw;
+  left: 7.5vw;
+}
+#Heading2_info1 em
+{
+  color: white;
+  top: 5vw;
+  left: 5vw;
+  font-size: 1vw;
+  width: 20vw;
+}
+#Heading2_info2
+{
+  top: 18vw;
+  left: 42vw;
+  width: 20vw;
+  font-size: 2vw;
+}
+#Heading2_info2 em
+{
+  color: white;
+  top: 6vw;
+  left: 1vw;
+  font-size: 1vw;
+  width: 20vw;
+}
+#Heading2_info3
+{
+  top: 17.5vw;
+  right: 8vw;
+  width: 20vw;
+  font-size: 2vw;
+}
+#Heading2_info3 em
+{
+  color: white;
+  top: 6vw;
+  left: 1vw;
+  font-size: 1vw;
+  width: 20vw;
+}
+#Heading3_info1
+{
+  top: -32vw;
+  left: 7.5vw;
+  font-size: 2.1vw;
+}
+#Heading3_info1 em
+{
+  color: white;
+  top: 5vw;
+  left: 5vw;
+  font-size: 1vw;
+  width: 20vw;
+}
+#Heading3_info2
+{
+  top: -33vw;
+  left: 42vw;
+  width: 20vw;
+  font-size: 2vw;
+}
+#Heading3_info2 em
+{
+  color: white;
+  top: 6vw;
+  left: 1vw;
+  font-size: 1vw;
+  width: 20vw;
+}
+#Heading3_info3
+{
+  top: -33vw;
+  right: 8vw;
+  width: 20vw;
+  font-size: 2vw;
+}
+#Heading3_info3 em
+{
+  color: white;
+  top: 6vw;
+  left: 1vw;
+  font-size: 1vw;
+  width: 20vw;
+}
+#Heading4_info1
+{
+  top: 18vw;
+  left: 6.5vw;
+  font-size: 2vw;
+}
+#Heading4_info1 em
+{
+  color: white;
+  top: 5vw;
+  left: 5vw;
+  font-size: 1vw;
+  width: 20vw;
+}
+#Heading4_info2
+{
+  top: 17vw;
+  left: 42vw;
+  width: 20vw;
+  font-size: 2vw;
+}
+#Heading4_info2 em
+{
+  color: white;
+  top: 7vw;
+  left: 1vw;
+  font-size: 1vw;
+  width: 20vw;
+}
+#Heading4_info3
+{
+  top: 17.5vw;
+  right: 8vw;
+  width: 20vw;
+  font-size: 1.75vw;
+}
+#Heading4_info3 em
+{
+  color: white;
+  top: 6vw;
+  left: 1vw;
+  font-size: 1vw;
+  width: 20vw;
+}
+#Heading1_Info
+{
+  opacity: 0; 
+}
+#Heading2_Info
+{
+opacity: 0;
+}
+#Heading3_Info
+{
+opacity: 0;
+}
+#Heading4_Info
+{
+opacity: 0;
+}
+@keyframes ease-in1 {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+}
+@keyframes ease-out1 {
+    100%{opacity: 0;}
+    0%{opacity: 1;}
+}
+#navbar
+{
+  background-color: rgb(0, 0, 30);
+  opacity: 0;
+  position: absolute;
+  z-index: 10000000 ;
+  width: 100%;
+  position: fixed;
+  margin: 0;
+}
+#logo
+{
+  width: 4vw;
+
+  border-radius: 20%;
+}
+
+.navbar_content
+{
+  text-decoration:none;
+position: absolute;
+top:1.5vw;
+font-size: 1.3vw;
+color: rgb(232, 249, 255);
+font-family: "Audiowide",cursive
+}
+#Achievments_reach
+{
+  left: 10vw;
+}
+#prices_reach
+{
+  left: 21.5vw;
+}
+#Contact_reach
+{
+  left: 27.5vw;
+}
+#Achievments
+{
+
+    width: 99vw;
+    height: 40vw;
+    margin-top: -1.4vw;
+    padding: 0px;
+}
+#Welcome
+{
+  font-family: "Orbitron",sans-serif;
+  color: rgb(232, 255, 234);
+  font-size: 4.5vw;
+  text-align: center;
+  text-shadow: 0.3vw 0.3vw 0vw black;
+
+margin-top: 8vw;}
+#Welcome span
+{
+  text-shadow: none;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color:transparent;
+  background-image: linear-gradient(40deg,rgb(94, 255, 124),rgb(137, 255, 233),rgb(103, 255, 136),rgb(55, 255, 218));
+}
+#ballon
+{
+  width: 50vw;
+  margin: 0px;
+  position: absolute;
+  left: -4vw;
+}
+.achieved
+{
+  color: aliceblue;
+     font-family: monospace;
+     font-size: 1.5vw;
+     text-align: center;
+     background-image: linear-gradient(-45deg,  rgb(0, 192, 128),rgb(123, 93, 255),rgb(0, 192, 122));
+     width: 20vw;
+     height: 20vw;
+     display: inline-flex;
+     justify-content: center;
+     flex-direction: column;
+     border-radius: 3vw;
+    
+}
+.achieved span{
+  font-size: 5vw;
+  margin-top: 2vw;
+
+}
+#awards1
+{
+  position: absolute;
+left: 2vw;
+top: 70vw;
+
+
+}
+#awards2
+{
+ position: absolute;
+left: 40vw;
+top: 70vw;
+}
+#awards3
+{
+ position: absolute;
+right: 2vw;
+top: 70vw;
+}
+.achieved:hover
+{
+  box-shadow: 0.5vw 0.5vw 0px black;
+  transition: box-shadow 0.2s ease-in;
+}
+#slider1
+{
+  width: 23vw;
+  height: 23vw;
+border: rgb(172, 255, 205) 10vw solid;
+border-image-slice: 1;
+  border-radius: 50%;
+  
+}
+#Circle
+{
+   margin-top: 10vw;
+  width: 99vw;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+.Slider_Content
+{
+  font-size: 5vw;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    height: 20vw;
+    width: 20vw;
+    transform: translate(-28vw,10vw);
+    
+}
+#Slider_Content1
+{
+right: 23vw;
+top: 108vw;
+
+}
+#Slider_Content2
+{
+left: 23vw;
+top: 108vw;
+}
+#Slider_Content3
+{
+left: 39.5vw;
+top: 89vw;
+}
+#Slider_Content4
+{
+left: 39.5vw;
+top: 122vw;
+}
+
+#Slider_MainContent
+{
+  top: 111vw;
+  font-size: 10vw;
+  transform: translate(11.5vw,0vw);
+}
+.Money_Price_Content li
+{
+    color: aliceblue  ;
+     margin-left: 3vw;
+     font-size: 1.4vw;
+     margin-bottom: 2vw;
+}
+.Money_Price_Content b
+{
+  font-size: 8vw;
+  font-family: 'Orbitron', sans-serif;
+  color: aliceblue  ;
+}
+.Money_Price_Content
+{
+  position: absolute;
+    top: 109vw;
+  right: 2vw;
+}
+.Money_Price_Content 
+{
+  opacity:0;
+}
+
+#Money_Content1
+{opacity: 1 ;}
+#ContactUs h6{
+  font-family: 'AudioWide', sans-serif;
+  color: rgb(255, 255, 255);
+
+  display: inline;
+  margin-right: 2vw;
+  font-size: 1.2vw;
+
+}
+#ContactUs
+{
+ 
+
+  margin-top: 4vw;
+}
+.svgs
+{
+  width: 2vw;
+  display: inline-flex;
+  flex-direction: row;
+  align-self: center;
+}
+
+#Cursor
+{
+  width: 4vw;
+  height: 4vw;
+background-color: transparent;
+border: 0.2vw rgb(152, 255, 62) solid;
+  border-radius: 50%;
+  position: fixed;
+  z-index: 999999999999;
+  pointer-events: none;
+transform: translate(-2vw,-2vw);
+}
+
+* 
+{
+  cursor: none;
+}
+
+@keyframes cursor_enlarger {
+  100%{  width: 1vw;
+  height: 1vw;
+  background-color: rgb(152, 255, 62);transform: translate(-0.5vw,-0.5vw)}
+  0%{width: 4vw;
+  height: 4vw;
+background-color: transparent;
+border: 0.2vw rgb(152, 255, 62) solid;transform: translate(-2vw,-2vw);}
+}
+@keyframes cursor_delarger {
+  0%{  width: 1vw;
+  height: 1vw;
+  background-color: rgb(152, 255, 62);transform: translate(-0.5vw,-0.5vw)}
+  100%{width: 4vw;
+  height: 4vw;
+background-color: transparent;
+border: 0.2vw rgb(152, 255, 62) solid;transform: translate(-2vw,-2vw);}
+}
+#container
+{
+  animation: moveshape 62s infinite alternate ;
+  position: absolute;
+  top:0;
+  z-index: -5;
+  position: fixed;
+}
+#blob
+{
+  width: 30vw;
+  aspect-ratio: 1/1;
+  background: linear-gradient(rgb(20, 202, 184)0%, rgba(41,116,221,0.8) 40%,rgba(126,26,247,0.8)100%);
+  border-radius: 30% 70% 70% 30%/ 30% 40% 70% 70%;
+  filter: blur(50px);
+  animation: morphshape 6s linear infinite, rotateShape 12s linear infinite;
+}
+@keyframes rotateShape {
+  0%{transform: rotate(0deg);}
+  100%{transform: rotate(360deg);}
+  
+}
+@keyframes moveshape {
+  0%,100%{transform: translate(20vw,10vh);}
+  10%{transform: translate(55vw,10vh);}
+    20%{transform: translate(45vw,20vh);}
+      30%{transform: translate(65vw,30vh);}
+      40%{transform: translate(45vw,60vh);}
+    50%{transform: translate(20vw,20vh);}
+      60%{transform: translate(30vw,30vh);}  
+      70%{transform: translate(55vw,30vh);}
+      80%{transform: translate(50vw,10vh);}
+    90%{transform: translate(10vw,20vh);}
+}
+@keyframes morphshape {
+  0%,100%{ border-radius: 30% 70% 70% 30%/ 30% 40% 70% 70%;}
+  20%{ border-radius: 40% 65% 50% 50%/ 40% 35% 35% 65%;}
+    40%{ border-radius: 20% 20% 45% 45%/ 20% 20% 20% 30%;}
+      60%{ border-radius: 30% 45% 45% 35%/ 35% 45% 20% 20%;}
+      80%{ border-radius: 70% 75% 75% 50%/ 50% 55% 55% 20%;}
+}
+    </style>
+</head>
+<body>
+<img src="AllBackground.png" alt="" id="backgroundAll">
+
+<nav id="navbar"><img id="logo" src="logo.png"></img><a id="home_reach" href="#Header" class="navbar_content">Home</a><a id="Achievments_reach" href="#Achievments" class="navbar_content">Achievements</a><a id="prices_reach" href="#Prices" class="navbar_content">Prices</a><a id="Contact_reach" href="#ContactUs" class="navbar_content">Contact Us</a></nav>
+
+  <div id="Header">
+    <em id="arrow1" class="clickable"><</em><em id="arrow2" class="clickable">></em>
+    </div>
+    <div id="Head_Text_Holder">
+      <h1 id="Heading1" class="Head_Info">Your Gateway to the Stars</h1>
+      <h1 id="Heading2" class="Head_Info">Engineered for the Ultimate Journey</h1>
+      <h1 id="Heading3" class="Head_Info">Space Adventures, Down-to-Earth Prices</h1>
+      <h1 id="Heading4" class="Head_Info">Your Health. Our Mission.</h1>
+    </div>
+       <div id="Heading1_Info">
+      <h1 id="Heading1_info1" class="Subtext">
+🚀 Next-Gen Spacecraft
+<em class="Sub_Sub_text">Fly aboard our next-gen, reusable spacecraft — engineered for safe, smooth, and stylish space travel. Built with advanced alloys, adaptive shielding, and precision avionics, each vessel offers low-G seating, panoramic domes, and seamless acceleration from launch to orbit.
+
+Tested and refined over years, our AI-guided systems, autonomous safety, and hybrid propulsion ensure every mission — suborbital or orbital — is efficient, elegant, and ready to take civilians confidently beyond Earth.</em>
+      </h1>
+
+      <h1 id="Heading1_info2" class="Subtext">
+        🌌 Unmatched Views Beyond Earth
+        <em class="Sub_Sub_text"> Experience breathtaking views of Earth from low orbit — a perspective few have known. Watch the planet’s curve stretch beneath you as oceans, clouds, and cities drift by. From your personal panoramic window, see sunrises every 90 minutes and stars shine with unmatched clarity.
+
+Above, space is vast and silent; below, Earth glows with life. It’s a view that inspires wonder and leaves a lasting sense of awe.</em>
+      </h1>
+      <h1 id="Heading1_info3" class="Subtext">
+        👨‍✈️ Personalized Pre-Flight Experience
+        <em class="Sub_Sub_text">Get mission-ready with comprehensive support that covers every step of your preflight journey. Engage in expert-led training sessions where you’ll learn safety procedures, spacecraft operations, and how to move in zero gravity. Enjoy personalized gear fittings, including your own custom flight suit and communication setup, designed for maximum comfort and performance.</em>
+      </h1>
+
+    </div>
+
+    <div id="Heading2_Info">
+
+
+
+
+    <h1 id="Heading2_info1" class="Subtext">
+⚙️ Innovation at Every Layer
+<em class="Sub_Sub_text">From concept to launchpad, every detail of our spaceflight system is designed with purpose. Propulsion, materials, life-support, and cabin design work together in perfect harmony — optimized through years of engineering breakthroughs and real-world testing. This is more than a spacecraft; it’s a fully integrated experience, where innovation isn’t a feature — it’s the foundation of your journey beyond Earth.</em>
+      </h1>
+
+      <h1 id="Heading2_info2" class="Subtext">
+        🧭 Precision Safety & Navigation Systems
+        <em class="Sub_Sub_text"> Safety isn’t just a feature — it’s the foundation. Our intelligent systems combine AI-guided navigation, real-time telemetry analysis, and autonomous emergency protocols to ensure unmatched reliability in every phase of flight. Dual redundancy, predictive diagnostics, and hybrid propulsion allow for ultra-smooth launches, mid-orbit adjustments, and pinpoint landings. With thousands of test hours behind each launch, you're in the hands of the most advanced safety tech ever flown.
+
+Above, space is vast and silent; below, Earth glows with life. It’s a view that inspires wonder and leaves a lasting sense of awe.</em>
+      </h1>
+      <h1 id="Heading2_info3" class="Subtext">
+       🌌 Passenger-Centered Innovation
+        <em class="Sub_Sub_text">Your comfort is engineered into every inch. From low-G reclining seats that reduce fatigue to panoramic viewing domes that offer uninterrupted vistas of Earth and deep space, the interior experience is anything but ordinary. Ambient lighting, sound-dampened chambers, and intuitive controls create an environment that feels serene, not sterile. Whether you're on a short suborbital hop or a multi-day mission, you'll travel in a vessel designed not just to take you far — but to take care of you.</em>
+      </h1>
+    </div>
+
+
+    <div id="Heading3_Info">
+
+
+
+    <h1 id="Heading3_info1" class="Subtext">
+💰 Transparent, All-Inclusive Pricing
+<em class="Sub_Sub_text">Say goodbye to fine print and unexpected fees. Our pricing model is designed with transparency at its core — every ticket includes mission training, custom-fitted gear, medical screenings, launch-day services, in-flight amenities, and post-landing care. You won’t need to worry about upgrades, hidden charges, or surprise add-ons. What you see is what you get: a world-class space experience with nothing left to chance.
+
+</em>
+      </h1>
+
+      <h1 id="Heading3_info2" class="Subtext">
+        🪐 Flexible Journeys for Every Explorer
+        <em class="Sub_Sub_text"> Not every explorer has the same destination — and we’ve built our offerings to reflect that. Choose from thrilling suborbital hops that deliver weightlessness and Earth curvature views, or go all-in with multi-day orbital experiences that circle the planet at 17,500 mph. With tiered packages, seasonal pricing, and optional add-ons, there’s a mission for every dreamer — whether you're celebrating a milestone, chasing adventure, or checking off the ultimate bucket list goal.</em>
+      </h1>
+      <h1 id="Heading3_info3" class="Subtext">
+        🔁 Reusability Means Affordability
+        <em class="Sub_Sub_text">Advanced reusability isn’t just good for the planet — it’s great for your wallet. Our spacecraft are built to fly multiple missions with minimal refurbishment, dramatically lowering launch costs while maintaining the highest safety and performance standards. This breakthrough engineering allows us to offer a premium spaceflight experience at a fraction of historic prices — making civilian space travel more accessible than ever before.</em>
+      </h1>
+
+    </div>
+    
+    <div id="Heading4_Info">
+
+
+
+    <h1 id="Heading4_info1" class="Subtext">
+🧬 Rigorous Preflight Medical Screening
+<em class="Sub_Sub_text">Your well-being starts long before launch. Every traveler undergoes a comprehensive health evaluation conducted by aerospace-certified medical professionals. We assess cardiovascular fitness, neurological stability, and stress response — using protocols adapted from astronaut training. These screenings ensure that your body is ready for space, while giving you peace of mind through personalized, science-backed preparation.
+
+</em>
+      </h1>
+
+      <h1 id="Heading4_info2" class="Subtext">
+        🧘‍♂️ Wellness Support from Earth to Orbit
+        <em class="Sub_Sub_text"> Health doesn't pause when the mission begins. Our spacecraft are equipped with low-G ergonomic seating, pressure-regulated cabins, and ambient lighting designed to reduce fatigue and motion stress. You’ll also have access to onboard wellness tools — from hydration support to guided breathing techniques — all designed to keep you feeling balanced, calm, and centered throughout your flight.</em>
+      </h1>
+      <h1 id="Heading4_info3" class="Subtext">
+        🩺 24/7 Medical Monitoring & Emergency Protocols
+        <em class="Sub_Sub_text">Safety is built into every moment of the journey. From preflight to re-entry, your vitals are continuously monitored using non-invasive biometric sensors. Our onboard systems are connected to AI-driven diagnostic tools and live ground-based medical teams, ready to respond instantly if needed. With emergency protocols modeled after space agency standards, your health is not just protected — it's prioritized at every stage.</em>
+      </h1>
+
+    </div>
+    
+
+    <div id="Achievments">
+      <h1 id="Welcome">Welcome To <span>AstroLoom</span></h1>
+
+      <h1 alt="" id="awards1" class="achieved"><span>5</span><br>Awards Gotten </h1>
+      <h1 alt="" id="awards2" class="achieved"><span>150</span><br>Countries Reached </h1>
+      <h1 alt="" id="awards3" class="achieved"><span>10,000</span><br>People Satisfied </h1>
+    </div>
+    
+    <div id="Prices">
+    <div id="Circle">
+      <p id="slider1" class="circle"></p>
+      <h1 id="Slider_Content1" class="Slider_Content clickable">🥈</h1>
+      <h1 id="Slider_Content2" class="Slider_Content clickable">⚜️</h1>
+      <h1 id="Slider_Content3" class="Slider_Content clickable">💎</h1>
+      <h1 id="Slider_Content4" class="Slider_Content clickable">🛸</h1>
+       <h1 id="Slider_MainContent" class="Slider_Content clickable">🥈</h1>
+    </div>
+    <div id="Money_Price">
+      <ul class="Money_Price_Content" id="Money_Content1"><b>10,000₹</b><li>Flight Duration & Destinations: <em>15 MINUTES</em></li>
+    <li>Spacecraft & Comfort Level: <em>Standard capsule with basic seating</em></li>
+  <li>Training & Preparation Time: <em>1-day</em></li>
+<li>Activities & Experiences: <em>Weightlessness experience and Earth viewing</em></li>
+<li>Group Size & Privacy: <em>Shared experience with 8-12 passengers</em></li>
+<li>Support & Services: <em>Standard pre-flight briefing</em></li></ul>
+      <ul class="Money_Price_Content" id="Money_Content2"><b>30,000₹</b>><li>Flight Duration & Destinations: <em>2-3 Hours</em></li>
+    <li>Spacecraft & Comfort Level: <em>Premium capsule with panoramic windows</em></li>
+  <li>Training & Preparation Time: <em>3-day astronaut preparation program</em></li>
+<li>Activities & Experiences: <em>EVA simulation, gourmet space meals</em></li>
+<li>Group Size & Privacy: <em>Semi-private with 4-6 passengers</em></li>
+<li>Support & Services: <em>Personal space guide and photographer</em></li></ul>
+      <ul class="Money_Price_Content" id="Money_Content3"><b>60,000₹</b>><li>Flight Duration & Destinations: <em>Multi-day orbital stay with space hotel</em></li>
+    <li>Spacecraft & Comfort Level: <em>Luxury spacecraft with private cabins</em></li>
+  <li>Training & Preparation Time: <em>2-week comprehensive space training</em></li>
+<li>Activities & Experiences: <em>Spacewalk opportunity, scientific experiments</em></li>
+<li>Group Size & Privacy: <em>Exclusive small group of 2-4 passengers</em></li>
+<li>Support & Services: <em>Dedicated crew, custom itinerary planning</em></li></ul>
+      <ul class="Money_Price_Content" id="Money_Content4"><b>1,00,000₹</b>><li>Flight Duration & Destinations: <em>Lunar flyby or Mars transit mission</em></li>
+    <li>Spacecraft & Comfort Level: <em>State-of-the-art vessel with artificial gravity</em></li>
+  <li>Training & Preparation Time: <em>3-month intensive astronaut certification</em></li>
+<li>Activities & Experiences: <em>Moon surface exploration or Mars research participation</em></li>
+<li>Group Size & Privacy: <em> Completely private or custom expedition</em></li>
+<li>Support & Services: <em>Full astronaut-level medical and psychological preparation</em></li></ul>
+    </div>
+    </div>
+    <marquee id="ContactUs" scrollamount = "10">
+      <h6 id="Contact_Component1" class="ContactUs_Components"><img src="Instagram.png" alt="" class="svgs" id="Contact_Component1">Instagram - @AstroLoom</h6>
+      <h6 id="Contact_Component2" class="ContactUs_Components"><img src="Mail.png" alt="" class="svgs" id="Contact_Component2">Gmail - AstroLoom.aeron@gmail.com</h6>
+      <h6 id="Contact_Component3" class="ContactUs_Components"><img src="Facebook.png" alt="" class="svgs" id="Contact_Component3">Facebook - @AstroLoom_Space</h6>
+      <h6 id="Contact_Component4" class="ContactUs_Components"><img src="Phone.png" alt="" class="svgs" id="Contact_Component4">Phone No. - 9999999999</h6>
+    </marquee>
+
+    <div id="Cursor">
+
+    </div>
+ 
+    <div id="container">
+      <div id="blob"></div>
+    </div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="Main.js"></script>
+  
+</html>
+
+
+
